@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+    <style>
+        .topnav {
+            background-color: rgb(19, 15, 15);
+            overflow: hidden;
+            height: 50px;
+            width: 100%;
+            margin-left: 0px;
+        }
+        
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 16px 17px;
+            text-decoration: none;
+            font-size: 15px;
+            margin-right: 0%;
+        }
+        
+        body {
+            width: 100%;
+        }
+        
+        .topnav img {
+            margin-top: -15px;
+        }
+        
+        .topnav a:hover {
+            background-color: rgb(167, 166, 166);
+            color: black;
+        }
+        
+        .topnav a.active {
+            background-color: #141414;
+            color: rgb(230, 223, 223);
+        }
+        
+        .topnav .icon {
+            display: none;
+        }
+        
+        .first h1 {
+            margin-left: 200px;
+            font-size: 20px;
+            margin-top: 50px;
+            color: rgb(43, 41, 41)
+        }
+        
+        .first h2 {
+            margin-left: 200px;
+            font-size: 15px;
+            margin-top: 20px;
+            color: rgb(156, 150, 150)
+        }
+        
+        .btn btn-light {
+            color: rgb(156, 150, 150);
+            font-size: 10px;
+        }
+        
+        .third {
+            margin-left: 500px;
+            margin-top: 20px;
+        }
+        
+        .flex {
+            display: flex;
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">
+            <img src="https://midiaresearch.com/storage/uploads/blog/featured/1177/cover_image-1594998634.png" alt="Netflix" width="112" height="60">
+            <a href="#news">Home</a>
+            <a href="#contact">Tv Show</a>
+            <a href="#about">Movies</a>
+            <a href="#about">Recently Added</a>
+            <a href="#about">My List</a>
+            <a href="#about">Kids</a>
+            <img src="data:image/png;base64,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"
+                alt="Netflix" style="margin-left: 350px;width:20px;margin-top: 10px;height:20px;">
+
+
+
+
+
+
+
+
+    </div>
+
+
+    <div class="first">
+        <div class="second">
+            <h1>Account</h1>
+            <hr style="height:1px;border-width:0;color:gray;background-color:gray;margin-left: 200px;margin-right: 200px;">
+
+        </div>
+    </div>
+    <div class="container" style="margin-left: 185px;">
+        <div class="row">
+            <div class="col-3" style="color: rgb(156, 152, 152);font-size: 15px;">
+                Membership & BILLING
+            </div>
+            <div class="col-4" style="font-size: 13px;color:black"><b>Student@Strive.School</b>
+
+            </div>
+            <div class="col-4" style="font-size: 12px;"><a href="url"><b> Change Account Email</b>
+               </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3" style="color: rgb(199, 190, 190);font-size: 15px;">
+                <button name="button">Cancel Membership</button>
+
+            </div>
+            <div class="col-4" style="font-size: 9px;color:rgb(170, 166, 166)">
+                Password******
+            </div>
+            <div class="col-4" style="font-size: 12px;"><a href="url"><b> Change Password</b>
+               </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3" style="color: rgb(199, 190, 190);font-size: 15px;">
+
+            </div>
+            <div class="col-4" style="font-size: 9px;color:rgb(170, 166, 166)">
+                Phone:3210441279
+            </div>
+            <div class="col-4" style="font-size: 12px;">
+                <a href="url">
+                    <b>Change Phone numbe</b> r</a>
+            </div>
+
+        </div>
+        <hr style="height:1px;border-width:0;color:rgb(245, 240, 240);background-color:gray;margin-left: 250px;margin-right: 240px;">
+        <div class="row">
+            <div class="col-3" style="color: rgb(199, 190, 190);font-size: 15px;">
+
+            </div>
+            <div class="col-4" style="font-size: 13px;color:rgb(17, 16, 16)">
+                <b> Pay Pal   admin@Strive.School</b>
+            </div>
+            <div class="col-4" style="font-size: 12px;">
+                <a href="url">
+                    <b>Update Payment info</b> </a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3" style="color: rgb(199, 190, 190);font-size: 17px;">
+
+            </div>
+            <div class="col-4" style="font-size: 9px;color:rgb(170, 166, 166)">
+
+            </div>
+            <div class="col-4" style="font-size: 12px;">
+                <a href="url">
+                    <b>Billing Details</b> </a>
+            </div>
+
+
+        </div>
+        <hr style="height:1px;border-width:0;color:rgb(245, 240, 240);background-color:gray;margin-left: 250px;margin-right: 240px;">
+        <div class="row">
+            <div class="col-3" style="color: rgb(199, 190, 190);font-size: 17px;">
+
+            </div>
+            <div class="col-4" style="font-size: 9px;color:rgb(170, 166, 166)">
+
+            </div>
+            <div class="col-4" style="font-size: 12px;">
+                <a href="url">
+                    <b>Redeem gift Card Promo</b> </a>
+                <div class="col-4" style="font-size: 10px;display:flex;">
+                    <a href="url">
+                        <b>Where to buy gift cards </b> </a>
+                </div>
+
+
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+    <div>
+        <hr style="height:1px;border-width:0;color:gray;background-color:gray;margin-left: 200px;margin-right: 200px;">
+    </div>
+    <div class="container" style="margin-left: 185px;">
+        <hr style="height:0.5px;border-width:0;color:rgb(245, 240, 240);background-color:rgb(114, 105, 105);margin-left: 10px;margin-right: 220px;">
+        <div class="row">
+            <div class="col-3" style="color: rgb(122, 119, 119);font-size: 15px;">
+                PLAN DETAILS
+            </div>
+            <div class="col-4" style="font-size: 12px;">
+
+                <b>Permium</b>
+
+            </div>
+            <div class="col-4" style="font-size: 12px;">
+                <a href="url">
+                    <b>Change plan</b></a>
+            </div>
+        </div>
+    </div>
+    <div>
+        <hr style="height:0.5px;border-width:0;color:rgb(245, 240, 240);background-color:rgb(114, 105, 105);margin-left: 200px;margin-right: 200px;">
+    </div>
+    <div class="container" style="margin-left: 185px;">
+        <hr style="height:0.5px;border-width:0;color:rgb(245, 240, 240);background-color:rgb(114, 105, 105);margin-left: 200px;margin-right: 200px;">
+        <div class="row">
+            <div class="col-3" style="color: rgb(122, 119, 119);font-size: 15px;">
+                Setting
+            </div>
+            <div class="col-4" style="font-size: 10px;color:black">
+                <a href="url"> <b>Parental Control</b> </a>
+
+
+            </div>
+            <div class="col-4" style="font-size: 10px;color:black">
+
+
+
+            </div>
+            <div class="col-4" style="font-size: 12px;">
+                <a href="url"></a>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3" style="color: rgb(122, 119, 119);font-size: 15px;">
+
+            </div>
+            <div class="col-4" style="font-size: 10px;color:black">
+                <a href="url"> <b>Test Participation</b></a>
+
+
+            </div>
+            <div class="col-4" style="font-size: 10px;color:black">
+
+
+
+            </div>
+            <div class="col-4" style="font-size: 12px;">
+                <a href="url"></a>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3" style="color: rgb(122, 119, 119);font-size: 15px;">
+
+            </div>
+            <div class="col-4" style="font-size: 10px;color:black">
+                <a href="url"> <b>Manage Download Device</b> </a>
+
+
+            </div>
+            <div class="col-4" style="font-size: 10px;color:black">
+
+
+
+            </div>
+            <div class="col-4" style="font-size: 12px;">
+                <a href="url"></a>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3" style="color: rgb(122, 119, 119);font-size: 15px;">
+
+            </div>
+            <div class="col-4" style="font-size: 10px;color:black">
+                <a href="url"> <b>Active a Device</b> </a>
+
+
+            </div>
+            <div class="col-4" style="font-size: 10px;color:black">
+
+
+
+            </div>
+            <div class="col-4" style="font-size: 12px;">
+                <a href="url"></a>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3" style="color: rgb(122, 119, 119);font-size: 15px;">
+
+            </div>
+            <div class="col-4" style="font-size: 10px;color:black">
+                <a href="url"><b>Recent device Streaming activity</b></a>
+
+
+            </div>
+            <div class="col-4" style="font-size: 10px;color:black">
+
+
+
+            </div>
+            <div class="col-4" style="font-size: 12px;">
+                <a href="url"></a>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3" style="color: rgb(122, 119, 119);font-size: 15px;">
+
+            </div>
+            <div class="col-4" style="font-size: 10px;color:black">
+                <a href="url"><b>Sign Of device</b></a>
+
+
+            </div>
+            <div class="col-4" style="font-size: 10px;color:black">
+
+
+
+            </div>
+            <div class="col-4" style="font-size: 12px;">
+                <a href="url"></a>
+
+            </div>
+        </div>
+    </div>
+
+
+    <div>
+
+    </div>
+
+    <div class="container" style="margin-left: 185px;">
+        <hr style="height:0.5px;border-width:0;color:rgb(245, 240, 240);background-color:rgb(114, 105, 105);margin-left: 10px;margin-right: 220px;">
+        <div class="row">
+            <div class="col-3" style="color: rgb(122, 119, 119);font-size: 15px;">
+                My Profile
+            </div>
+            <div class="col-4" style="font-size: 10px;color:black">
+                <a href="url"> <b>Strive student</b> </a>
+
+
+            </div>
+            <div class="col-4" style="font-size: 10px;color:black">
+                <a href="url"><b>Manage Profile</b></a>
+
+
+
+            </div>
+
+
+
+
+        </div>
+        <div class="row">
+            <div class="col-3" style="color: rgb(122, 119, 119);font-size: 15px;">
+
+            </div>
+            <div class="col-4" style="font-size: 10px;color:black">
+                <a href="url"> </a>
+
+
+            </div>
+            <div class="col-4" style="font-size: 10px;color:black">
+                <a href="url"><b>Add Profile email</b></a>
+
+
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+    <div class="container" style="margin-left: 420px;font-size: 12px;;">
+        <div class="row">
+            <div class="col-6 col-sm-2" style="font-size: 12;"><a href="url"><b>Language</b></a></div>
+            <div class="col-6 col-sm-4"> <a href="url"><b>Viewing activity</b></a></div>
+        </div>
+        <div class="row">
+            <div class="col-6 col-sm-2"> <a href="url"><b>Play back setting</b></a></div>
+            <div class="col-6 col-sm-4"></div>
+        </div>
+        <div class="row">
+            <div class="col-6 col-sm-2"><a href="url"><b>Subtitle apperance</b></a></div>
+            <div class="col-6 col-sm-4"></div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
